@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.VerifyOtpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_verifyotpbg">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_35sdp"
+                android:src="@drawable/ic_verify_otp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:scaleType="fitXY" />
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsregular"
+                android:padding="@dimen/_15sdp"
+                android:text="Verification"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Set the Code"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edit1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:background="@drawable/edit_box"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:padding="@dimen/_15sdp">
+
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/edit2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:background="@drawable/edit_box"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:padding="@dimen/_15sdp">
+
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/edit3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:background="@drawable/edit_box"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:padding="@dimen/_15sdp">
+
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/edit4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:background="@drawable/edit_box"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:padding="@dimen/_15sdp">
+
+                    </EditText>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/verify_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:background="@drawable/btn_baground"
+            android:layout_marginBottom="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/poppinsregular"
+                android:paddingLeft="@dimen/_20sdp"
+                android:text="Verify"
+                android:gravity="center"
+                android:textColor="#005D78"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+</layout>

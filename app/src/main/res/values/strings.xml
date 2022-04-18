@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">SmiledocUser</string>
+    <string name="title_home">Home</string>
+    <string name="title_doctor">Doctor</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_search">Search</string>
+    <string name="title_user">User</string>
+
+    <string name="title_1">Dr. Tanisha khan is the top most orthopaedic
+specialist in Dhaka Medical College hospital
+at Dhaka.She achived several award for her
+wonderful contribution in her own field.She is
+available for private consultation.</string>
+
+    <string name="email_address_mobile_number1">Email</string>
+    <string name="first">First Name</string>
+    <string name="last">Last Name</string>
+    <string name="password">Password</string>
+    <string name="dob">Date of Birth</string>
+    <string name="forgot"><u>Forgot Your Password ? </u></string>
+    <string name="login">Login</string>
+    <string name="next">Next</string>
+    <string name="paynow">PAY NOW</string>
+
+    <string name="paynow1">Screening Exam- Screening  X-rays, Photo and Exam. Allows for Smile Pro bidding for treatment, no hassle cleanings.
+        Perfect for healthy mouths who what to get into they system</string>
+
+    <string name="paynow2">Comprehensive Exam- 3D CBCT Screening  X-rays, Photo and Exam.  Allows for Smile Pro bidding for treatment, no hassle cleanings.
+        For patients who know they have some problems and want some answers.</string>
+
+    <string name="paynow3">Enhanced imaging 3D -CBCT - For Patients who had the screening Exam, and need more imaging.</string>
+
+    <string name="title">Screening Exam- Screening  X-rays, Photo and Exam. Allows for Smile Pro bidding for treatment, no hassle cleanings.
+        Perfect for healthy mouths who what to get into they system</string>
+
+    <string name="title1">Comprehensive Exam- 3D CBCT Screening  X-rays, Photo and Exam.  Allows for Smile Pro bidding for treatment, no hassle cleanings.
+        For patients who know they have some problems and want some answers.</string>
+
+    <string name="title2">Enhanced imaging 3D -CBCT - For Patients who had the screening Exam, and need more imaging.</string>
+
+    <string name="rat">  Tanisha Is good doctor. She know how to
+    treatment a patients. Very Good Service.
+    Well Professional</string>
+    <string name="rat1">Would you recommend Dr. Tanisha Khan
+to your friend?</string>
+
+
+    <string name="home_p">GO TO HOME PAGE</string>
+    <string name="pay_des">Your appointment request has been
+sent, waiting for confirmation.</string>
+
+    Your appointment request has been
+    sent, waiting for confirmation.
+    <string name="log_out"><u>LOG OUT</u></string>
+    <string name="done">DONE</string>
+
+    <string name="first_name">First Name</string>
+    <string name="add_more"><u>ADD MORE</u></string>
+    <string name="bank_holder_name">Bank Holder Name</string>
+    <string name="ifsc_code">IFSC COde</string>
+    <string name="bank_account_number">Bank Account Number</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="no_internet">No Internet</string>
+
+    <string name="select_action">Select action</string>
+    <string name="select_photo_from_gallery">Select photo from gallery</string>
+    <string name="capture_photo_from_camera">Capture photo from camera</string>
+    <string name="please_enter_mobile_number">Please enter mobile number</string>
+    <string name="please_enter_first_name">Please enter first name</string>
+    <string name="please_enter_last_name">Please enter last name</string>
+    <string name="permission_denied">Permission denied</string>
+
+
+    <string name="please_enter_email_address">Please enter email address</string>
+    <string name="invalid_email_address">Invalid email address</string>
+    <string name="please_enter_password">Please select password</string>
+    <string name="please_wait">please wait...</string>
+    <string name="network_failure" />
+
+    <string name="are_you_sure_you_want_to_logout_this_app">Are you sure you want to logout this app?</string>
+</resources>

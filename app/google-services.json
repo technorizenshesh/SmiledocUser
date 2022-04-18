@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "666549800961",
+    "project_id": "smiledoc-f1f1b",
+    "storage_bucket": "smiledoc-f1f1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666549800961:android:9347c222b1bbe85137f000",
+        "android_client_info": {
+          "package_name": "com.smiledocuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666549800961-r9dop4nkkajbmas2016tpbpn8uhe32sf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smiledocuser",
+            "certificate_hash": "6190513275cab95d19dfc589af64305d6b3dcf0f"
+          }
+        },
+        {
+          "client_id": "666549800961-0igmr84u21eer4fbpvq1lcp0qnhhmurr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJVAnHNPy_EaQcUFwLknJDY9BepziHSZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666549800961-0igmr84u21eer4fbpvq1lcp0qnhhmurr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

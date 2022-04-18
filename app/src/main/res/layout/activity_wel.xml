@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".WelcomeAct"
+
+        android:background="@color/white"
+        >
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+
+
+
+
+      <!--  <androidx.cardview.widget.CardView
+            android:id="@+id/btnCountinue"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_above="@+id/layoutBars"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_30sdp"
+            android:onClick="next"
+            app:cardElevation="@dimen/_2sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_black_light"
+                android:fontFamily="@font/irc_demi"
+                android:gravity="center"
+                android:text="@string/start"
+                android:textColor="@color/color_btn"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </androidx.cardview.widget.CardView>-->
+
+
+        <LinearLayout
+            android:id="@+id/layoutBars"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:visibility="gone"/>
+
+
+        <ImageView
+            android:id="@+id/next_btn"
+            android:layout_width="46dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:onClick="next"
+            android:src="@drawable/ic_next" />
+
+
+    </RelativeLayout>
+
+</layout>

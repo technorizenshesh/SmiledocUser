@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.smiledocuser.fragment.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_navigation_home_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+
+        <action
+            android:id="@+id/action_navigation_home_to_filterFragment"
+            app:destination="@id/filterFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_doctor"
+            app:destination="@id/navigation_doctor" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_search_doctor"
+            app:destination="@id/navigation_search_doctor" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_doctor"
+        android:name="com.smiledocuser.fragment.DoctorFragment"
+        android:label="@string/title_doctor"
+        tools:layout="@layout/fragment_doctor">
+        <action
+            android:id="@+id/action_navigation_dashboard_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+
+        <action
+            android:id="@+id/action_navigation_dashboard_to_navigation_doctor_map"
+            app:destination="@id/navigation_doctor_map" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_doctor_map"
+        android:name="com.smiledocuser.fragment.DoctorMapFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_doctor_map" />
+
+
+
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.smiledocuser.fragment.BookingFragment"
+        android:label="BookingFragment"
+        tools:layout="@layout/fragment_booking">
+        <action
+            android:id="@+id/action_bookingFragment_to_bookingAppointment"
+            app:destination="@id/bookingAppointment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/doctoreFragment"
+        android:name="com.smiledocuser.fragment.TreatmentFragment"
+        android:label="DoctoreFragment"
+        tools:layout="@layout/fragment_treatment">
+
+        <action
+            android:id="@+id/action_doctoreFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_user_profile"
+        android:name="com.smiledocuser.fragment.UserProfileFragment"
+        android:label="UserProfile"
+        tools:layout="@layout/fragment_user_profile"/>
+
+    <fragment
+        android:id="@+id/navigation_search_doctor"
+        android:name="com.smiledocuser.fragment.SearchDoctorFragment"
+        android:label="SearchByDr"
+        tools:layout="@layout/fragment_search_doctor">
+
+        <action
+            android:id="@+id/action_searchByDr_to_bookingFragment"
+            app:destination="@id/bookingFragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.smiledocuser.fragment.FilterFragment"
+        android:label="FilterFragment"
+        tools:layout="@layout/fragment_filter" >
+
+        <action
+            android:id="@+id/action_filterFragment_to_getDoctorFilterList"
+            app:destination="@id/getDoctorFilterList" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/getDoctorFilterList"
+        tools:layout="@layout/fragment_filter_doctor"
+        android:name="com.smiledocuser.fragment.FilterDoctorFragment"
+        android:label="GetDoctorFilterList" >
+
+        <action
+            android:id="@+id/action_getDoctorFilterList_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+        <action
+            android:id="@+id/action_getDoctorFilterList_to_navigation_doctor_map"
+            app:destination="@id/navigation_doctor_map" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/bookingAppointment"
+        android:name="com.smiledocuser.fragment.BookingAppointmentFragment"
+        android:label="BookingAppointment" >
+        <action
+            android:id="@+id/action_bookingAppointment_to_navigation_PatientDetailFragment"
+            app:destination="@id/navigation_PatientDetailFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_PatientDetailFragment"
+        android:name="com.smiledocuser.fragment.PatientDetailFragment"
+        android:label="PatientDetailFragment">
+        <action
+            android:id="@+id/action_navigation_PatientDetailFragment_to_navigation_PaymentlFragment"
+            app:destination="@id/navigation_PaymentlFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_PaymentlFragment"
+        android:name="com.smiledocuser.fragment.PaymentFragment"
+        android:label="PaymentlFragment">
+        <action
+            android:id="@+id/action_navigation_PaymentlFragment_to_navigation_PaymentSuccessfullFragment"
+            app:destination="@id/navigation_PaymentSuccessfullFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_PaymentSuccessfullFragment"
+        android:name="com.smiledocuser.fragment.PaymentSuccessFragment"
+        android:label="PaymentSuccessfullFragment"/>
+</navigation>
