@@ -39,8 +39,8 @@ public class AdapterTreatment extends RecyclerView.Adapter<AdapterTreatment.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
-        holder.binding.nameParticipates.setText(arrayList.get(position).getFirst_name()+" "+arrayList.get(position).getLast_name());
+        holder.binding.nameParticipates.setText(arrayList.get(position).getCategory_name());
+     //   holder.binding.nameParticipates.setText(arrayList.get(position).getFirst_name()+" "+arrayList.get(position).getLast_name());
         holder.binding.specility.setText(arrayList.get(position).getCategory_name());
         holder.binding.price.setText(" $ " + arrayList.get(position).getFees());
         if (arrayList.get(position).getImage() != null) {
