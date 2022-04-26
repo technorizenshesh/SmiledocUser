@@ -2,6 +2,7 @@ package com.smiledocuser.adapter;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,12 +54,15 @@ public class AdapterTreatment extends RecyclerView.Adapter<AdapterTreatment.View
         } else {
             holder.binding.img1.setImageResource(R.drawable.ic_user_circle_24);
         }
-        Bundle bundle = new Bundle();
-        bundle.putString("id", arrayList.get(position).getId());
 
-        holder.binding.addTv.setOnClickListener (v ->
-                Navigation.findNavController(v).navigate(R.id.action_navigation_dashboard_to_bookingFragment, bundle)
-        );
+
+        holder.binding.layoutMain.setOnClickListener (v -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("id", arrayList.get(position).getCategory_id());
+            bundle.putString("title", arrayList.get(position).getCategory_name());
+            Log.e("Cate===id",arrayList.get(position).getCategory_id());
+            Navigation.findNavController(v).navigate(R.id.navigation_select_by_category_doctor, bundle);
+        }  );
 
     }
 

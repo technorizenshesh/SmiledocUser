@@ -24,6 +24,13 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_search_doctor"
             app:destination="@id/navigation_search_doctor" />
+
+
+       <!-- <action
+            android:id="@+id/action_navigation_home_to_show_doctor_list"
+            app:destination="@id/navigation_select_by_category_doctor" />-->
+
+
     </fragment>
 
 
@@ -145,4 +152,28 @@
         android:id="@+id/navigation_PaymentSuccessfullFragment"
         android:name="com.smiledocuser.fragment.PaymentSuccessFragment"
         android:label="PaymentSuccessfullFragment"/>
+
+
+
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/navigation_select_by_category_doctor"
+        android:name="com.smiledocuser.fragment.SelectCategoryDoctorFragment"
+        android:label="Doctors"
+        tools:layout="@layout/fragment_show_doctors">
+
+
+        <action
+            android:id="@+id/action_navigation_dashboard_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+
+    </fragment>
+
+
+
 </navigation>

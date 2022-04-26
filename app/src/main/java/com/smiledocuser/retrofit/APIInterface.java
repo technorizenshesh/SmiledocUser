@@ -10,6 +10,8 @@ package com.smiledocuser.retrofit;
 
 
 
+import com.smiledocuser.model.DoctorsModel;
+
 import java.util.Map;
 
 import okhttp3.RequestBody;
@@ -72,8 +74,8 @@ public interface APIInterface {
             ,@Field("doctor_id") String doctor_id);
 
 
-
-
-
+    @FormUrlEncoded
+    @POST("get_doctor_by_category?")
+    Call<DoctorsModel> get_all_doctor_cate (@FieldMap Map<String, String> params);
 
 }

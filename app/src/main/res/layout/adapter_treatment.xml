@@ -15,6 +15,7 @@
         app:cardBackgroundColor="@color/white">
 
         <LinearLayout
+            android:id="@+id/layoutMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="@dimen/_5sdp"
