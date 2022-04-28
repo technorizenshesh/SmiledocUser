@@ -17,6 +17,7 @@ import com.smiledocuser.FilterClickListener;
 import com.smiledocuser.R;
 import com.smiledocuser.databinding.AdapterDoctorBinding;
 import com.smiledocuser.databinding.AdapterFilterTreatmentBinding;
+import com.smiledocuser.listener.OnPosListener;
 import com.smiledocuser.model.DoctoreListModal;
 import com.smiledocuser.model.GetFilterCategoryModal;
 import com.smiledocuser.model.GetFilterConsaltantModal;
@@ -26,11 +27,11 @@ import java.util.ArrayList;
 public class AdapterFilterTreatment extends RecyclerView.Adapter<AdapterFilterTreatment.ViewHolder> {
     Context context;
     ArrayList<GetFilterCategoryModal> arrayList;
-    FilterClickListener listener;
+    OnPosListener listener;
     int lastSelectedPosition = -1;
     RadioButton lastCheckedRB = null;
 
-    public AdapterFilterTreatment(Context context, ArrayList<GetFilterCategoryModal> arrayList,FilterClickListener listener) {
+    public AdapterFilterTreatment(Context context, ArrayList<GetFilterCategoryModal> arrayList,OnPosListener listener) {
         this.context = context;
         this.arrayList = arrayList;
         this.listener = listener;
@@ -47,7 +48,7 @@ public class AdapterFilterTreatment extends RecyclerView.Adapter<AdapterFilterTr
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.binding.categoryName.setText(arrayList.get(position).getDrname());
-        holder.binding.categoryName.setChecked(lastSelectedPosition == position);
+        holder.binding.categoryName.setChecked(Boolean.parseBoolean(arrayList.get(position).getSet_filter()));
 
 
     }
@@ -64,12 +65,14 @@ public class AdapterFilterTreatment extends RecyclerView.Adapter<AdapterFilterTr
             binding =itemView;
 
             binding.categoryName.setOnClickListener(v -> {
-                listener.treatmentClick(arrayList.get(getAdapterPosition()).getDrId());
-                if (lastCheckedRB != null) {
+              /*  if (lastCheckedRB != null) {
                     binding.categoryName.setChecked(false);
                 }
-                lastCheckedRB = binding.categoryName;
-                notifyDataSetChanged();
+                lastCheckedRB = binding.categoryName;*/
+                if(arrayList.get(getAdapterPosition()).getSet_filter().equals("true"))  arrayList.get(getAdapterPosition()).setSet_filter("false");
+                else arrayList.get(getAdapterPosition()).setSet_filter("true");
+                listener.onPos(getAdapterPosition(),arrayList.get(getAdapterPosition()).getSet_filter());
+                notifyItemChanged(getAdapterPosition());
             });
 
         }

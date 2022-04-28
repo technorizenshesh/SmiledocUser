@@ -78,4 +78,10 @@ public interface APIInterface {
     @POST("get_doctor_by_category?")
     Call<DoctorsModel> get_all_doctor_cate (@FieldMap Map<String, String> params);
 
+    @FormUrlEncoded
+    @POST("apply_filter?")
+    Call<ResponseBody> applyFilter(@Field("user_id") String user_id
+            ,@Field("category_ids") String category_ids);
+
+
 }

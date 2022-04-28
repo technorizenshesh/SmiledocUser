@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -47,6 +48,7 @@ public class SearchDoctorFragment extends Fragment {
     DoctoreListModal get_all_category;
     AdapterSearchDoctor adapter;
     JSONArray result_json;
+    public static TextView tvNotFound;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,8 +60,9 @@ public class SearchDoctorFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        tvNotFound = binding.tvNotFound;
 
-
+        binding.imgBack.setOnClickListener(v->getActivity().onBackPressed());
 
         if (NetworkAvailablity.checkNetworkStatus(getActivity())) getSearchByDrAPI();
         else
@@ -104,8 +107,9 @@ public class SearchDoctorFragment extends Fragment {
                             result_json = object.getJSONArray("result");
                             for (int i = 0; i < result_json.length(); i++) {
                                 get_all_category = new Gson().fromJson(result_json.getJSONObject(i).toString(), DoctoreListModal.class);
+                                get_category_list.add(get_all_category);
                             }
-                            get_category_list.add(get_all_category);
+
                             adapter = new AdapterSearchDoctor(getActivity(), get_category_list);
                             binding.recyclerViewDr.setAdapter(adapter);
 
@@ -145,7 +149,7 @@ public class SearchDoctorFragment extends Fragment {
 
             if (get_category_list != null) {
                 for (int i = 0; i < get_category_list.size(); i++) {
-                    String text = get_category_list.get(i).getCategory_name().toLowerCase();
+                    String text = get_category_list.get(i).getFirst_name().toLowerCase();
                     if (text.contains(query)) {
                         filteredList.add(get_category_list.get(i));
                     }

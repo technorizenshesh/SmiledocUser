@@ -3,6 +3,7 @@ package com.smiledocuser.adapter;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.smiledocuser.R;
 import com.smiledocuser.databinding.AdapterDoctorBinding;
 import com.smiledocuser.databinding.AdapterSearchDoctorBinding;
+import com.smiledocuser.fragment.SearchDoctorFragment;
 import com.smiledocuser.model.DoctoreListModal;
 
 import java.util.ArrayList;
@@ -64,7 +66,10 @@ public class AdapterSearchDoctor extends RecyclerView.Adapter<AdapterSearchDocto
     }
 
     public void filterList(ArrayList<DoctoreListModal> filterlist) {
+
         arrayList = filterlist;
+        if(filterlist.size()==0) SearchDoctorFragment.tvNotFound.setVisibility(View.VISIBLE);
+        else SearchDoctorFragment.tvNotFound.setVisibility(View.GONE);
         notifyDataSetChanged();
     }
 

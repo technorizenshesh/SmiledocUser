@@ -108,9 +108,9 @@
                 android:id="@+id/recycler_view_dr"
                 android:layout_width="match_parent"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"/>
 
-            </androidx.recyclerview.widget.RecyclerView>
+
 
         </LinearLayout>
 
@@ -118,6 +118,17 @@
 
 
 
+
+    <TextView
+        android:id="@+id/tvNotFound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/data_not_available"
+        android:textColor="@color/black"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/poppinsregular"
+        android:visibility="gone"/>
 
 </RelativeLayout>
 </layout>
