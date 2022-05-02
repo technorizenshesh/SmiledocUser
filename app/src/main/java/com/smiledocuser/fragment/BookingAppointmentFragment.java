@@ -255,6 +255,6 @@ public class BookingAppointmentFragment extends Fragment implements TimeSlotClic
 
     @Override
     public void onClick(TimeSlote timeSlote) {
-        time= timeSlote.getStart();
+        time= timeSlote.getStart() + " TO " + timeSlote.getEnd_name();
     }
 }

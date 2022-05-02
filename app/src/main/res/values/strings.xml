@@ -80,4 +80,5 @@ sent, waiting for confirmation.</string>
     <string name="are_you_sure_you_want_to_logout_this_app">Are you sure you want to logout this app?</string>
     <string name="check_available">check availability</string>
     <string name="data_not_available">data not available</string>
+    <string name="book_now">Book Now</string>
 </resources>

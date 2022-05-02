@@ -76,8 +76,8 @@ public class PatientDetailFragment extends Fragment {
                         Toast.LENGTH_SHORT).show();
             }else {
                 Bundle bundle = new Bundle();
-                bundle.putString("id", requireArguments().getString("iddd"));
-                bundle.putString("fees", requireArguments().getString("amount"));
+                bundle.putString("id", requireArguments().getString("id"));
+                bundle.putString("fees", requireArguments().getString("fees"));
                 bundle.putString("final_date", requireArguments().getString("final_date"));
                 bundle.putString("time", requireArguments().getString("time"));
 

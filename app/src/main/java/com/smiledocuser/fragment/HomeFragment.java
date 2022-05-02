@@ -24,9 +24,11 @@ import com.smiledocuser.MainActivity;
 import com.smiledocuser.R;
 import com.smiledocuser.act.LoginAct;
 import com.smiledocuser.adapter.AdapterTreatment;
+import com.smiledocuser.adapter.AdapterTreatment2;
 import com.smiledocuser.databinding.FragmentHomeBinding;
 import com.smiledocuser.model.DoctoreListModal;
 import com.smiledocuser.model.TabModal;
+import com.smiledocuser.model.TreatmentModel;
 import com.smiledocuser.model.VerifyOtpModal;
 import com.smiledocuser.retrofit.APIInterface;
 import com.smiledocuser.retrofit.ApiClient;
@@ -64,11 +66,11 @@ public class HomeFragment extends Fragment {
    // DetailsAdapter adapter;
 
 
-    AdapterTreatment adapternew;
+    AdapterTreatment2 adapternew;
     ArrayList<TabModal> tab_array_list;
     //private var recycler_view_dr: RecyclerView? = null
-    ArrayList<DoctoreListModal> tab_array_listnew;
-    DoctoreListModal doctor_modal;
+    ArrayList<TreatmentModel> tab_array_listnew;
+    TreatmentModel doctor_modal;
 
     String latitude = "";
     String longitude = "";
@@ -201,9 +203,8 @@ public class HomeFragment extends Fragment {
         DataManager.getInstance().showProgressMessage(getActivity(), getString(R.string.please_wait));
         Call<ResponseBody> loginCall;
         Map<String, String> map = new HashMap<>();
-        map.put("category_id", category_id);
-        if(category_id.equals("0"))     loginCall = apiInterface.get_all_doctor(category_id);
-        else   loginCall = apiInterface.get_doctor_by_category(category_id);
+        map.put("user_id", DataManager.getInstance().getUserData(getActivity()).result.id);
+        loginCall = apiInterface.get_all_treatment(DataManager.getInstance().getUserData(getActivity()).result.id);
         Log.e(TAG, "Login Request " + map);
         loginCall.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -215,13 +216,14 @@ public class HomeFragment extends Fragment {
                         String responseData = response.body() != null ? response.body().string() : "";
                         object = new JSONObject(responseData);
                         if(object.optString("status").equals("1")){
-                            tab_array_listnew = new ArrayList<DoctoreListModal>();
+                            tab_array_listnew = new ArrayList<TreatmentModel>();
                             result_json = object.getJSONArray("result");
                             for (int i = 0 ; i< result_json.length();i++){
-                              doctor_modal = new Gson().fromJson(result_json.getJSONObject(i).toString(),DoctoreListModal.class);
+                              doctor_modal = new Gson().fromJson(result_json.getJSONObject(i).toString(),TreatmentModel.class);
+                              tab_array_listnew.add(doctor_modal);
                             }
-                            tab_array_listnew.add(doctor_modal);
-                            adapternew = new AdapterTreatment(getActivity(),tab_array_listnew);
+
+                            adapternew = new AdapterTreatment2(getActivity(),tab_array_listnew);
                             binding.recyclerViewDr.setAdapter(adapternew);
 
                         }
@@ -277,11 +279,11 @@ public class HomeFragment extends Fragment {
         try {
             query = query.toLowerCase();
 
-            final ArrayList<DoctoreListModal> filteredList = new ArrayList<DoctoreListModal>();
+            final ArrayList<TreatmentModel> filteredList = new ArrayList<TreatmentModel>();
 
             if(tab_array_listnew != null) {
                 for (int i = 0; i < tab_array_listnew.size(); i++) {
-                    String text = tab_array_listnew.get(i).getCategory_name().toLowerCase();
+                    String text = tab_array_listnew.get(i).getName().toLowerCase();
                     if (text.contains(query)) {
                         filteredList.add(tab_array_listnew.get(i));
                     }

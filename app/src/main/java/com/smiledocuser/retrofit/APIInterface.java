@@ -84,4 +84,23 @@ public interface APIInterface {
             ,@Field("category_ids") String category_ids);
 
 
+    @FormUrlEncoded
+    @POST("get_all_treatments?")
+    Call<ResponseBody> get_all_treatment(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST("booking_request?")
+    Call<ResponseBody> orderPlace(@Field("user_id") String user_id,
+                                  @Field("doctor_id") String doctor_id,
+                                  @Field("date") String date,
+                                  @Field("slot_time") String slot_time,
+                                  @Field("fees") String fees,
+                                  @Field("user_name") String user_name,
+                                  @Field("user_age") String user_age,
+                                  @Field("gender") String gender,
+                                  @Field("mobile") String mobile,
+                                  @Field("problem") String problem,
+                                  @Field("payment_type") String payment_type);
+
+
 }

@@ -7,6 +7,7 @@
     android:layout_marginBottom="@dimen/_45sdp"
     android:background="@color/white">
 
+
     <LinearLayout
         android:id="@+id/linear_header"
         android:layout_width="match_parent"
@@ -55,7 +56,10 @@
 
         </LinearLayout>
 
-
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -156,7 +160,7 @@
                             android:text="Available Slots"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_15sdp"
-                            android:textStyle="bold"></TextView>
+                            android:textStyle="bold"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -172,7 +176,7 @@
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:text="10:00 am"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_12sdp"></TextView>
+                                android:textSize="@dimen/_12sdp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -181,7 +185,7 @@
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:text="10:00 am"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_12sdp"></TextView>
+                                android:textSize="@dimen/_12sdp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -192,7 +196,7 @@
                                 android:padding="@dimen/_5sdp"
                                 android:text=" 10:00 am "
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_12sdp"></TextView>
+                                android:textSize="@dimen/_12sdp"/>
 
                         </LinearLayout>
 
@@ -240,7 +244,7 @@
                                     android:text="Morning"
                                     android:textColor="#005D78"
                                     android:textSize="@dimen/_10sdp"
-                                    android:textStyle="bold"></TextView>
+                                    android:textStyle="bold"/>
 
                             </LinearLayout>
 
@@ -269,7 +273,7 @@
                                 android:text="Other Information"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_15sdp"
-                                android:textStyle="bold"></TextView>
+                                android:textStyle="bold"/>
                             <LinearLayout
                                 android:id="@+id/allLayout"
                                 android:visibility="gone"
@@ -302,14 +306,14 @@
                                         android:text="All"
                                         android:textColor="@color/black"
                                         android:textSize="@dimen/_10sdp"
-                                        android:textStyle="bold"></TextView>
+                                        android:textStyle="bold"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
                                         android:text="Can make voice call,message with doctor"
-                                        android:textSize="@dimen/_10sdp"></TextView>
+                                        android:textSize="@dimen/_10sdp"/>
 
                                 </LinearLayout>
 
@@ -345,14 +349,14 @@
                                         android:text="Voice Call"
                                         android:textColor="@color/black"
                                         android:textSize="@dimen/_10sdp"
-                                        android:textStyle="bold"></TextView>
+                                        android:textStyle="bold"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
                                         android:text="Can make voice call with doctor"
-                                        android:textSize="@dimen/_10sdp"></TextView>
+                                        android:textSize="@dimen/_10sdp"/>
 
                                 </LinearLayout>
 
@@ -389,14 +393,14 @@
                                         android:text="Messaging"
                                         android:textColor="@color/black"
                                         android:textSize="@dimen/_10sdp"
-                                        android:textStyle="bold"></TextView>
+                                        android:textStyle="bold"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
                                         android:text="Can message with doctor"
-                                        android:textSize="@dimen/_10sdp"></TextView>
+                                        android:textSize="@dimen/_10sdp"/>
 
                                 </LinearLayout>
 
@@ -433,14 +437,14 @@
                                         android:text="Video Call"
                                         android:textColor="@color/black"
                                         android:textSize="@dimen/_10sdp"
-                                        android:textStyle="bold"></TextView>
+                                        android:textStyle="bold"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
                                         android:text="Can make video call with doctor"
-                                        android:textSize="@dimen/_10sdp"></TextView>
+                                        android:textSize="@dimen/_10sdp"/>
 
                                 </LinearLayout>
 
@@ -460,7 +464,7 @@
                             android:textAlignment="center"
                             android:textColor="@color/purple_700"
                             android:textSize="@dimen/_12sdp"
-                            android:textStyle="bold"></TextView>
+                            android:textStyle="bold"/>
 
 
                     </LinearLayout>
@@ -471,6 +475,8 @@
 
         </LinearLayout>
 
+
+    </androidx.core.widget.NestedScrollView>
 
     </LinearLayout>
 

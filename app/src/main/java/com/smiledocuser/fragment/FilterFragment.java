@@ -48,13 +48,13 @@ import retrofit2.Response;
 public class FilterFragment extends Fragment implements OnPosListener {
     public String TAG = "FilterFragment";
     FragmentFilterBinding binding;
-    String value="0",value2="0",category_name="",iddd="",CateIdsss="";
+    String value = "0", value2 = "0", category_name = "", iddd = "", CateIdsss = "";
     AdapterFilterTreatment adapter;
     GetFilterCategoryModal get_all_category;
     JSONArray result_json;
     ArrayList<GetFilterCategoryModal> get_category_list;
 
-    ArrayList<String>arrayList =new ArrayList<>();
+    ArrayList<String> arrayList = new ArrayList<>();
     APIInterface apiInterface;
 
 
@@ -63,75 +63,77 @@ public class FilterFragment extends Fragment implements OnPosListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         apiInterface = ApiClient.getClient().create(APIInterface.class);
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_filter, container, false);
-        return  binding.getRoot();    }
+        return binding.getRoot();
+    }
 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.imgBack.setOnClickListener(v -> getActivity().onBackPressed());
-        binding.loginBtn.setOnClickListener(v-> {
-          //      Bundle bundle =new  Bundle();
-        //    bundle.putString("filter_value",value);
-           // bundle.putString("consultantType",value2);
+        binding.loginBtn.setOnClickListener(v -> {
+            //      Bundle bundle =new  Bundle();
+            //    bundle.putString("filter_value",value);
+            // bundle.putString("consultantType",value2);
 
-          //  Navigation.findNavController(v).navigate(R.id.action_filterFragment_to_getDoctorFilterList,bundle);
+            //  Navigation.findNavController(v).navigate(R.id.action_filterFragment_to_getDoctorFilterList,bundle);
             //  action_filterFragment_to_getDoctorFilterList
             //Log.e("FilterType>>>>", "" + value + "ConsultantType>>>>" + value2)
 
-            if(NetworkAvailablity.checkNetworkStatus(getActivity())) ApplyFilter();
-            else Toast.makeText(getActivity(), getString(R.string.network_failure), Toast.LENGTH_SHORT).show();
+            if (NetworkAvailablity.checkNetworkStatus(getActivity())) ApplyFilter();
+            else
+                Toast.makeText(getActivity(), getString(R.string.network_failure), Toast.LENGTH_SHORT).show();
 
         });
 
         GetFilterAPI();
-        
+
     }
 
     private void GetFilterAPI() {
         DataManager.getInstance().showProgressMessage(getActivity(), getString(R.string.please_wait));
         Map<String, String> map = new HashMap<>();
-        map.put("user_id",DataManager.getInstance().getUserData(getActivity()).result.id);
-        Call<ResponseBody> loginCall  = apiInterface.category_list(DataManager.getInstance().getUserData(getActivity()).result.id);
+        map.put("user_id", DataManager.getInstance().getUserData(getActivity()).result.id);
+        Call<ResponseBody> loginCall = apiInterface.category_list(DataManager.getInstance().getUserData(getActivity()).result.id);
         Log.e(TAG, "Login Request " + map);
         loginCall.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 DataManager.getInstance().hideProgressMessage();
                 try {
-                    JSONObject  object=null;
+                    JSONObject object = null;
                     if (response.isSuccessful()) {
                         String responseData = response.body() != null ? response.body().string() : "";
                         object = new JSONObject(responseData);
-                        if(object.optString("status").equals("1")){
+                        if (object.optString("status").equals("1")) {
                             get_category_list = new ArrayList<GetFilterCategoryModal>();
                             result_json = object.getJSONArray("result");
-                            for (int i = 0 ; i< result_json.length();i++){
-                                JSONObject jsonObject  = result_json.getJSONObject(i);
+                            for (int i = 0; i < result_json.length(); i++) {
+                                JSONObject jsonObject = result_json.getJSONObject(i);
                                 category_name = jsonObject.optString("category_name");
                                 iddd = jsonObject.optString("id");
 
-                                get_all_category =new  GetFilterCategoryModal();
+                                get_all_category = new GetFilterCategoryModal();
                                 get_all_category.setDrname1(category_name);
                                 get_all_category.setIdd(iddd);
                                 get_all_category.setSet_filter(jsonObject.optString("set_filter"));
                                 get_category_list.add(get_all_category);
 
                             }
-                            adapter = new AdapterFilterTreatment(getActivity(),get_category_list,FilterFragment.this);
+                            adapter = new AdapterFilterTreatment(getActivity(), get_category_list, FilterFragment.this);
                             binding.recyclerViewDrStatus.setAdapter(adapter);
 
                         }
 
 
                     } else {
-                        Toast.makeText(getActivity(),object.optString("message"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), object.optString("message"), Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (IOException | JSONException e) {
                     e.printStackTrace();
                     logException(e);
-                    Toast.makeText(getActivity(),e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -161,12 +163,18 @@ public class FilterFragment extends Fragment implements OnPosListener {
 
     @Override
     public void onPos(int position, String chk) {
-          arrayList.add(get_category_list.get(position).getDrId());
-           AddCommaIdsValues();
+        for (int i = 0; i < get_category_list.size(); i++) {
+            if (get_category_list.get(i).getSet_filter().equals("True"))
+                arrayList.add(get_category_list.get(i).getDrId());
+        }
+
+        AddCommaIdsValues();
+
+
     }
 
 
-    public String  AddCommaIdsValues(){
+    public String AddCommaIdsValues() {
         StringBuilder str = new StringBuilder("");
 
         // Traversing the ArrayList
@@ -187,43 +195,41 @@ public class FilterFragment extends Fragment implements OnPosListener {
                     = commaseparatedlist.substring(
                     0, commaseparatedlist.length() - 1);
 
-        Log.e("AddedString===",commaseparatedlist);
+        Log.e("AddedString===", commaseparatedlist);
         return commaseparatedlist;
     }
-
-
 
 
     private void ApplyFilter() {
         DataManager.getInstance().showProgressMessage(getActivity(), getString(R.string.please_wait));
         Map<String, String> map = new HashMap<>();
         map.put("user_id", DataManager.getInstance().getUserData(getActivity()).result.id);
-       map.put("category_ids", AddCommaIdsValues());
-        Call<ResponseBody> loginCall  = apiInterface.applyFilter(DataManager.getInstance().getUserData(getActivity()).result.id,AddCommaIdsValues());
+        map.put("category_ids", AddCommaIdsValues());
+        Call<ResponseBody> loginCall = apiInterface.applyFilter(DataManager.getInstance().getUserData(getActivity()).result.id, AddCommaIdsValues());
         Log.e(TAG, "getDrFliterList Request " + map);
         loginCall.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 DataManager.getInstance().hideProgressMessage();
                 try {
-                    JSONObject object=null;
+                    JSONObject object = null;
                     if (response.isSuccessful()) {
                         String responseData = response.body() != null ? response.body().string() : "";
                         object = new JSONObject(responseData);
-                        if(object.optString("status").equals("1")){
-                            Toast.makeText(getActivity(),object.optString("message"), Toast.LENGTH_SHORT).show();
+                        if (object.optString("status").equals("1")) {
+                            Toast.makeText(getActivity(), object.optString("message"), Toast.LENGTH_SHORT).show();
                             getActivity().onBackPressed();
                         }
 
 
                     } else {
-                        Toast.makeText(getActivity(),object.optString("message"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), object.optString("message"), Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (IOException | JSONException e) {
                     e.printStackTrace();
                     logException(e);
-                    Toast.makeText(getActivity(),e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -233,7 +239,6 @@ public class FilterFragment extends Fragment implements OnPosListener {
                 DataManager.getInstance().hideProgressMessage();
             }
         });
-
 
 
     }

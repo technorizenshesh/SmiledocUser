@@ -69,8 +69,8 @@ public class AdapterFilterTreatment extends RecyclerView.Adapter<AdapterFilterTr
                     binding.categoryName.setChecked(false);
                 }
                 lastCheckedRB = binding.categoryName;*/
-                if(arrayList.get(getAdapterPosition()).getSet_filter().equals("true"))  arrayList.get(getAdapterPosition()).setSet_filter("false");
-                else arrayList.get(getAdapterPosition()).setSet_filter("true");
+                if(arrayList.get(getAdapterPosition()).getSet_filter().equals("True"))  arrayList.get(getAdapterPosition()).setSet_filter("False");
+                else arrayList.get(getAdapterPosition()).setSet_filter("True");
                 listener.onPos(getAdapterPosition(),arrayList.get(getAdapterPosition()).getSet_filter());
                 notifyItemChanged(getAdapterPosition());
             });

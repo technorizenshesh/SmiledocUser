@@ -84,6 +84,7 @@
                     android:text="Cash on Visit">
 
                 </RadioButton>
+<!--
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -239,9 +240,10 @@
                 </ImageView>
 
                 </LinearLayout>
+-->
 
                 <LinearLayout
-                    android:id="@+id/reg_btn123"
+                    android:id="@+id/btnBook"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -256,10 +258,10 @@
                         android:paddingTop="@dimen/_10sdp"
                         android:paddingRight="@dimen/_80sdp"
                         android:paddingBottom="@dimen/_10sdp"
-                        android:text="@string/paynow"
+                        android:text="@string/book_now"
                         android:textColor="#005D78"
                         android:textSize="@dimen/_12sdp"
-                        android:textStyle="bold"></TextView>
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
 
