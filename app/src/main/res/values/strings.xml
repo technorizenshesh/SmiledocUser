@@ -81,4 +81,5 @@ sent, waiting for confirmation.</string>
     <string name="check_available">check availability</string>
     <string name="data_not_available">data not available</string>
     <string name="book_now">Book Now</string>
+    <string name="bids_not_available">bids not available</string>
 </resources>

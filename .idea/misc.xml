@@ -40,6 +40,9 @@
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/fragment_show_doctors.xml" value="0.1" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/fragment_treatment.xml" value="0.1484375" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/fragment_user_profile.xml" value="0.1484375" />
+        <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/item_appointment.xml" value="0.19270833333333334" />
+        <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/item_appointments.xml" value="0.19270833333333334" />
+        <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/item_bids.xml" value="0.17708333333333334" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/item_doctor.xml" value="0.14947916666666666" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1361111111111111" />
       </map>

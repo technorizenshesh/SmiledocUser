@@ -103,4 +103,17 @@ public interface APIInterface {
                                   @Field("payment_type") String payment_type);
 
 
+    @FormUrlEncoded
+    @POST("get_booking_request_user_id?")
+    Call<ResponseBody> get_all_bids(@Field("user_id") String user_id);
+
+
+
+    @FormUrlEncoded
+    @POST("get_user_appointment?")
+    Call<ResponseBody> get_all_appointment(@Field("user_id") String user_id);
+
+
+
+
 }
