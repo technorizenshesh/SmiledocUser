@@ -7,6 +7,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:943460050622:android:637a889a157eb2422ca0ef",
+        "android_client_info": {
+          "package_name": "com.smiledoc.doctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943460050622-u6m1bq1cb4cjmpnibjghigv5c1864ntn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smiledoc.doctor",
+            "certificate_hash": "4a54a0201b383cca1b8c056aecfb715e2f24fe05"
+          }
+        },
+        {
+          "client_id": "943460050622-77n2c8ifoa7l6havckgr81brol8eudqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvw4rP57jpNZo-vqC5cMoVb6drWFnWh6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943460050622-77n2c8ifoa7l6havckgr81brol8eudqd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:943460050622:android:89522dd30cfa8cd12ca0ef",
         "android_client_info": {
           "package_name": "com.smiledocuser"

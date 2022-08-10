@@ -82,4 +82,24 @@ sent, waiting for confirmation.</string>
     <string name="data_not_available">data not available</string>
     <string name="book_now">Book Now</string>
     <string name="bids_not_available">bids not available</string>
+
+
+    <!-- key for map-->
+    <string name="google_maps_key">AIzaSyAXTJrvnDTC8AjYzK2dPatsSAMJaTIc-c0</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+
+    <string name="fb_login_protocol_scheme">fb2465870793657332</string>
+    <string name="facebook_app_id">2465870793657332</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="email">Email</string>
+    <string name="send">Send</string>
+
+
+    <string name="forgotpasswordtext">Please, enter your email address. You will
+       <br /> receive a link to create a new password via <br /> email. </string>
+    <string name="send_successfully">Send successfully</string>
+    <string name="wrong_email">wrong email</string>
+    <string name="please_enter_email">Please enter email</string>
+
 </resources>

@@ -3,14 +3,14 @@
 
 
 <LinearLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/_40sdp"
     android:orientation="horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:id="@+id/booking_appoinment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_40sdp"
         android:layout_gravity="center"
         android:layout_margin="@dimen/_5sdp"
         android:background="@drawable/btn_baground">
@@ -19,7 +19,7 @@
               android:id="@+id/slote_i"
               android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:fontFamily="@font/poppinsregular"
             android:padding="@dimen/_10sdp"
             android:text="Morning"

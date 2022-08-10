@@ -3,13 +3,17 @@ package com.smiledocuser.act;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.util.Base64;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +25,8 @@ import com.smiledocuser.R;
 import com.smiledocuser.databinding.ActivitySplashBinding;
 import com.smiledocuser.utils.DataManager;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Locale;
 
 public class SplashAct extends AppCompatActivity {
@@ -33,7 +39,7 @@ public class SplashAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash);
         //processNextActivity();
-
+        KeyHash();
         if (checkPermissions()) {
             if (isLocationEnabled()) {
                 processNextActivity();
@@ -116,6 +122,27 @@ public class SplashAct extends AppCompatActivity {
         configuration.locale = locale;
         resources.updateConfiguration(configuration, resources.getDisplayMetrics());
     }
+
+
+
+    public void KeyHash(){
+        // Add code to print out the key hash
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    "com.smiledocuser",
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.e("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+
+        } catch (NoSuchAlgorithmException e) {
+
+        }
+    }
+
 
 
 }

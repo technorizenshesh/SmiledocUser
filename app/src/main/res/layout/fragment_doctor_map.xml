@@ -28,6 +28,7 @@
                 android:padding="@dimen/_15sdp">
 
                 <ImageView
+                    android:id="@+id/ivBack"
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
                     android:layout_gravity="center_vertical"
@@ -55,7 +56,8 @@
                     android:layout_height="@dimen/_25sdp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:src="@drawable/ic_locationn">
+                    android:src="@drawable/ic_locationn"
+                    android:visibility="gone">
 
                 </ImageView>
 
@@ -86,7 +88,8 @@
                 android:layout_centerInParent="true"
                 android:elevation="@dimen/_15sdp"
                 android:padding="@dimen/_15sdp"
-                android:src="@drawable/pin_marker">
+                android:src="@drawable/pin_marker"
+                android:visibility="gone">
 
             </ImageView>
 
@@ -96,7 +99,8 @@
                 android:layout_height="wrap_content"
                 android:background="#DFDCDC"
                 android:orientation="horizontal"
-                android:weightSum="3">
+                android:weightSum="3"
+                  android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="@dimen/_245sdp"
@@ -169,12 +173,21 @@
 
             </LinearLayout>
 
-              <fragment
+           <!-- <fragment
                 android:id="@+id/map"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/li1" />
+                android:layout_below="@+id/li1" />-->
+
+            <fragment
+                android:id="@+id/map"
+                class="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/li1"/>
+
+
 
         </RelativeLayout>
 

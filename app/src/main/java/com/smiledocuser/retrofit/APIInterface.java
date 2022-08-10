@@ -1,15 +1,6 @@
 package com.smiledocuser.retrofit;
 
 
-
-
-
-
-
-
-
-
-
 import com.smiledocuser.model.DoctorsModel;
 
 import java.util.Map;
@@ -29,7 +20,7 @@ public interface APIInterface {
 
     @FormUrlEncoded
     @POST("login?")
-    Call<ResponseBody> login (@FieldMap Map<String, String> params);
+    Call<ResponseBody> login(@FieldMap Map<String, String> params);
 
 
     @FormUrlEncoded
@@ -43,7 +34,6 @@ public interface APIInterface {
 
     @POST("update_profile?")
     Call<ResponseBody> updateProfile(@Body RequestBody file);
-
 
 
     @FormUrlEncoded
@@ -62,7 +52,7 @@ public interface APIInterface {
     @FormUrlEncoded
     @POST("search_doctor_by_category?")
     Call<ResponseBody> search_doctor_by_category(@Field("category_id") String category_id
-    ,@Field("consult_type_id") String consult_type_id);
+            , @Field("consult_type_id") String consult_type_id);
 
     @FormUrlEncoded
     @POST("doctor_details?")
@@ -71,17 +61,17 @@ public interface APIInterface {
     @FormUrlEncoded
     @POST("doctor_time_slote?")
     Call<ResponseBody> doctor_time_slote(@Field("date") String date
-            ,@Field("doctor_id") String doctor_id);
+            , @Field("doctor_id") String doctor_id);
 
 
     @FormUrlEncoded
     @POST("get_doctor_by_category?")
-    Call<DoctorsModel> get_all_doctor_cate (@FieldMap Map<String, String> params);
+    Call<DoctorsModel> get_all_doctor_cate(@FieldMap Map<String, String> params);
 
     @FormUrlEncoded
     @POST("apply_filter?")
     Call<ResponseBody> applyFilter(@Field("user_id") String user_id
-            ,@Field("category_ids") String category_ids);
+            , @Field("category_ids") String category_ids);
 
 
     @FormUrlEncoded
@@ -108,12 +98,27 @@ public interface APIInterface {
     Call<ResponseBody> get_all_bids(@Field("user_id") String user_id);
 
 
-
     @FormUrlEncoded
     @POST("get_user_appointment?")
     Call<ResponseBody> get_all_appointment(@Field("user_id") String user_id);
 
 
+    @FormUrlEncoded
+    @POST("get_nearest_doctor?")
+    Call<ResponseBody> get_nearest_doctor(@Field("user_id") String user_id
+            , @Field("lat") String lat,
+                                          @Field("lon") String lon);
+
+
+    @FormUrlEncoded
+    @POST("social_login")
+    Call<ResponseBody> socialLogin (@FieldMap Map<String, String> params);
+
+
+
+    @FormUrlEncoded
+    @POST("forgot_password")
+    Call<ResponseBody> forgotPass (@FieldMap Map<String, String> params);
 
 
 }

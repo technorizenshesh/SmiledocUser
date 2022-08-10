@@ -64,7 +64,9 @@ public class UserProfileFragment extends Fragment {
 
         binding.textViewProsmileBids.setOnClickListener ( v ->{ startActivity(new Intent(getActivity(), ProsmileBidsAct.class)); });
 
-        binding.textViewMyCards.setOnClickListener ( v ->{ startActivity(new Intent(getActivity(), MyCardAct.class)); });
+        binding.textViewMyCards.setOnClickListener ( v ->{
+           // startActivity(new Intent(getActivity(), MyCardAct.class));
+        });
 
         binding.lagout.setOnClickListener( v->{ LogOutAlert(); });
 

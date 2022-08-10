@@ -38,11 +38,11 @@ public class AdapterBooking extends RecyclerView.Adapter<AdapterBooking.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.binding.sloteI.setText(arrayList.get(position).getStart() + " TO " + arrayList.get(position).getEnd_name());
-       if(arrayList.get(position).getStatus().equals("true")){
+       /*if(arrayList.get(position).getStatus().equals("true")){
            holder.binding.sloteI.setBackground(context.getDrawable(R.drawable.border_edit_search));
 
        }
-       else {
+       else {*/
            if(arrayList.get(position).isChecked()){
                holder.binding.sloteI.setBackground(context.getDrawable(R.drawable.accept_border));
 
@@ -51,7 +51,7 @@ public class AdapterBooking extends RecyclerView.Adapter<AdapterBooking.ViewHold
                holder.binding.sloteI.setBackground(context.getDrawable(R.drawable.btn_baground));
 
            }
-       }
+      // }
 
 
     }

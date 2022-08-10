@@ -5,11 +5,14 @@
       <map>
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/drawable/accept_border.xml" value="0.1787037037037037" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/drawable/ic_locationn.xml" value="0.1787037037037037" />
+        <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/drawable/ic_logo.xml" value="0.15364583333333334" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/drawable/ic_next.xml" value="0.14114583333333333" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/activity_add_new_card.xml" value="0.19010416666666666" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/activity_appointment.xml" value="0.1" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/activity_edit_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/activity_forgot_pass.xml" value="0.1" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/activity_login.xml" value="0.16875" />
+        <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/activity_maps.xml" value="0.1" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/activity_my_card.xml" value="0.20416666666666666" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/activity_prosmile.xml" value="0.1" />
         <entry key="..\:/MyProjects/SmiledocUser2/app/src/main/res/layout/activity_prosmile_bids.xml" value="0.20416666666666666" />
